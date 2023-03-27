@@ -7,7 +7,7 @@ import {
 
 import './css/index.css';
 import App from './components/App';
-import ErrorPage from "./error-page";
+import ErrorPage from "./pages/error-page";
 
 import reportWebVitals from './reportWebVitals';
 
