@@ -1,6 +1,5 @@
 .container {
     width: 335px;
-    height: 111px;
     margin: auto;
     mix-blend-mode: darken;
     opacity: 0.3;
@@ -10,7 +9,7 @@
     align-items: flex-end;
 }
 
-.container h3   {
+.title   {
     font-family: 'Montserrat', sans-serif;
     font-style: normal;
     font-weight: 500;

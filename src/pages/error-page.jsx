@@ -1,6 +1,6 @@
 import {Link, useRouteError} from "react-router-dom";
-import Layout404 from "../components/Layout404";
 import styles from '../css/_ErrorPage.module.css';
+import Layout from "../components/Layout";
 
 
 export default function ErrorPage() {
@@ -8,7 +8,7 @@ export default function ErrorPage() {
     console.error(error);
 
     return (
-        <Layout404>
+        <Layout>
             <div className={styles.container}>
                 <h1 className={styles.title}>404</h1>
                 <p className={styles.text}>
@@ -17,6 +17,6 @@ export default function ErrorPage() {
                 </p>
                 <Link className={styles.link} to={'/'}>Retourner sur la page d’accueil</Link>
             </div>
-        </Layout404>
+        </Layout>
     );
 }

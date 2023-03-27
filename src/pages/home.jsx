@@ -5,7 +5,7 @@ export default function Home() {
     return (
         <>
             <section>
-                <Banner />
+                <Banner size={"small"} />
             </section>
             <section>
                 <CardList />
