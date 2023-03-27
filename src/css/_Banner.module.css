@@ -1,0 +1,23 @@
+.container {
+    width: 335px;
+    height: 111px;
+    margin: auto;
+    mix-blend-mode: darken;
+    opacity: 0.3;
+    border-radius: 10px;
+    background: #000000 url("../assets/img-banner.png");
+    display: flex;
+    align-items: flex-end;
+}
+
+.container h3   {
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    color: #FFFFFF;
+    line-height: 100%;
+    width: 217px;
+    height: 48px;
+    margin: 31px 102px 32px 16px;
+}

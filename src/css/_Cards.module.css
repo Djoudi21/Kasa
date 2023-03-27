@@ -1,0 +1,22 @@
+.container {
+    height: 255px;
+    width: 335px;
+    border-radius: 10px;
+    background-image: url("../assets/card-background.png");
+    margin: 20px auto;
+    position: relative;
+}
+
+.title {
+    height: 52px;
+    width: 296px;
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 142.6%;
+    color: #FFFFFF;
+    margin: 10px;
+    position: absolute;
+    bottom: 0;
+}
