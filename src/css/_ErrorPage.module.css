@@ -1,0 +1,44 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: calc(100vh - 200px);
+    flex-direction: column;
+    position: relative;
+}
+
+.title {
+    height: 99px;
+    width: 198px;
+    font-family: Montserrat, sans-serif;
+    font-size: 96px;
+    font-weight: 700;
+    line-height: 137px;
+    letter-spacing: 0;
+    text-align: center;
+    color: #FF6060;
+}
+
+.text {
+    font-family: Montserrat, sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 26px;
+    letter-spacing: 0;
+    text-align: center;
+    color: #FF6060;
+    max-width: 80%;
+}
+
+.link {
+    font-family: Montserrat, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: 0;
+    text-align: left;
+    color: #FF6060;
+    text-decoration: underline;
+    position: absolute;
+    bottom: 10%;
+}
