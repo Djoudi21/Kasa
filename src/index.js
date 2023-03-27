@@ -10,11 +10,23 @@ import App from './components/App';
 import ErrorPage from "./pages/error-page";
 
 import reportWebVitals from './reportWebVitals';
+import About from "./pages/about";
+import Accommodation from "./pages/accommodation";
 
 const router = createBrowserRouter([
     {
         path: "/",
         element: <App />,
+        errorElement: <ErrorPage />,
+    },
+    {
+        path: "/about",
+        element: <About />,
+        errorElement: <ErrorPage />,
+    },
+    {
+        path: "/accommodation/:id",
+        element: <Accommodation />,
         errorElement: <ErrorPage />,
     },
 ]);
