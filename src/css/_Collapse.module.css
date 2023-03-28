@@ -7,7 +7,6 @@
     justify-content: space-between;
     align-items: center;
     background: #FF6060;
-    margin: 0 20px;
     border-radius: 5px;
     padding: 10px;
 }
@@ -26,8 +25,6 @@
 .tutu {
     background: #F6F6F6;
     border-radius: 5px;
-    height: 200px;
-    margin: 0 20px;
     padding: 10px;
 }
 

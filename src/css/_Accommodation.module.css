@@ -1,0 +1,62 @@
+.container {
+margin: 0 20px;
+}
+
+.rating {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tutu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-right: 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 142.6%;
+    align-items: flex-end;
+    text-align: right;
+
+    color: #FF6060;
+}
+
+.title {
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 142.6%;
+    display: flex;
+    align-items: flex-end;
+    color: #FF6060;
+    margin: 15px 0 0 0;
+}
+
+.location {
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 142.6%;
+    display: flex;
+    align-items: flex-end;
+    margin: 5px 0 0 0;
+    color: #FF6060;
+}
+
+.tags {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}

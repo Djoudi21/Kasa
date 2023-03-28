@@ -1,7 +1,6 @@
 import styles from '../css/_Banner.module.css';
 
 export default function Banner(props) {
-    console.log(props)
     return (
         <>
             <div style={{ height: props.size === "small" ? '1OOpx' : '300px' }} className={styles.container}>
