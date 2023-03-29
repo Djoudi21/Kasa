@@ -2,7 +2,7 @@ import styles from '../../css/_Footer.module.css';
 
 export default function Footer({screenSize, width, height}) {
     return (
-        <div className={styles.copyright}>
+        <div data-testid="copyright" className={styles.copyright}>
             {
                 screenSize > 1200 ? (
                     <svg width={width} height={height} viewBox="0 0 190 13" fill="none" xmlns="http://www.w3.org/2000/svg">

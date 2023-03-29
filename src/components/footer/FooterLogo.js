@@ -2,7 +2,7 @@ import styles from '../../css/_Header.module.css';
 
 export default function HeaderLogo() {
     return (
-        <div className={styles.logo}>
+        <div data-testid="footer-logo" className={styles.logo}>
             <svg width="32" height="37" viewBox="0 0 32 37" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M11.6445 20.0984L5.12785 26.762V36.1125H0V0H5.12785V20.2058L24.5709 0H30.4466L15.1699 16.2292L31.5149 36.1125H25.5324L11.6445 20.0984Z" fill="white"/>
             </svg>
