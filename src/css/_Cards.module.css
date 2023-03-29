@@ -1,8 +1,6 @@
 .container {
     height: 255px;
     width: 335px;
-    border-radius: 10px;
-    background-image: url("../assets/card-background.png");
     margin: 20px auto;
     position: relative;
 }
@@ -19,4 +17,10 @@
     margin: 10px;
     position: absolute;
     bottom: 0;
+}
+
+.img {
+    width: 100%;
+    height: -webkit-fill-available;
+    border-radius: 10px;
 }
