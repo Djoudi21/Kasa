@@ -1,13 +1,13 @@
 import {Link} from "react-router-dom";
-import Logo from "./Logo";
-import styles from '../css/_Header.module.css';
+import HeaderLogo from "./HeaderLogo";
+import styles from '../../css/_Header.module.css';
 
 
 
 export default function Header() {
     return (
         <header className={styles.header}>
-            <Logo/>
+            <HeaderLogo/>
             <nav className={styles.nav}>
                 <ul>
                     <li><Link to={'/'} className={'nav-item'}>ACCUEIL</Link></li>

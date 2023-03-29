@@ -1,5 +1,6 @@
 import Banner from "../components/Banner";
 import CardList from "../components/CardsList";
+import styles from '../css/_Home.module.css';
 import {useContext, useEffect} from "react";
 import {AccommodationsContext} from "../utils";
 
@@ -13,7 +14,7 @@ export default function Home() {
             <section>
                 <Banner size={"small"} />
             </section>
-            <section>
+            <section className={styles.container}>
                 <CardList accommodations={accommodations} />
             </section>
         </>

@@ -1,6 +1,6 @@
-import styles from '../css/_Header.module.css';
+import styles from '../../css/_Header.module.css';
 
-export default function Logo() {
+export default function HeaderLogo() {
     return (
         <div className={styles.logo}>
             <div>

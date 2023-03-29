@@ -1,6 +1,6 @@
 import Layout from "../components/Layout";
 import styles from "../css/_Accommodation.module.css";
-import Collapse from "../components/Collapse";
+import Collapse from "../components/collapse/Collapse";
 import Tag from "../components/Tag";
 import {useContext, useEffect, useState} from "react";
 import {AccommodationsContext} from "../utils";
@@ -38,10 +38,7 @@ export default function Accommodation() {
         for (let i = 0; i < parsedRatedGoodStars; i++) {
             goodStars.push(
                 <div className={styles.fcenter}>
-                    {/*<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">*/}
-                    {/*    <path d="M9.8225 6.5L8 0.5L6.1775 6.5H0.5L5.135 9.8075L3.3725 15.5L8 11.9825L12.635 15.5L10.8725 9.8075L15.5 6.5H9.8225Z" fill="#E3E3E3"/>*/}
-                    {/*</svg>*/}
-                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg className={styles.star}viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M9.8225 6.5L8 0.5L6.1775 6.5H0.5L5.135 9.8075L3.3725 15.5L8 11.9825L12.635 15.5L10.8725 9.8075L15.5 6.5H9.8225Z" fill="#FF6060"/>
                     </svg>
                 </div>);
@@ -49,7 +46,7 @@ export default function Accommodation() {
 
         for (let i = 0; i < badStarsInt; i++) {
             badStars.push(
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg className={styles.star} viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M9.8225 6.5L8 0.5L6.1775 6.5H0.5L5.135 9.8075L3.3725 15.5L8 11.9825L12.635 15.5L10.8725 9.8075L15.5 6.5H9.8225Z" fill="#E3E3E3"/>
                 </svg>
             );
@@ -65,17 +62,19 @@ export default function Accommodation() {
                         <section>
                             <Gallery pictures={accommodation.pictures}  />
                         </section>
-                        <section>
-                            <h3 className={styles.title}>{accommodation.title}</h3>
-                            <span className={styles.location}>{ accommodation.location}</span>
-                            <div className={styles.tags}>
-                                {accommodation.tags && accommodation.tags.map((el) => (
-                                    <Tag title={el} />
-                                ))}
+                        <section className={styles.fend}>
+                            <div>
+                                <h3 className={styles.title}>{accommodation.title}</h3>
+                                <span className={styles.location}>{ accommodation.location}</span>
+                                <div className={styles.tags}>
+                                    {accommodation.tags && accommodation.tags.map((el) => (
+                                        <Tag title={el} />
+                                    ))}
+                                </div>
                             </div>
                             <div className={styles.faround}>
-                                <div className={styles.fcenter}>{stars}</div>
                                 <div className={styles.faround}>
+                                    <div className={styles.fcenter}>{stars}</div>
                                     <div className={styles.tutu}>
                                         {/*<span>{accommodation.host.name}</span>*/}
                                     </div>
@@ -86,10 +85,8 @@ export default function Accommodation() {
                                 </div>
                             </div>
                         </section>
-                        <section>
+                        <section className={styles.faround && styles.column}>
                             <Collapse title={"Description"} text={ accommodation.description} />
-                        </section>
-                        <section>
                             <Collapse title={"Equipment"} list={ accommodation.equipments} />
                         </section>
                     </div>

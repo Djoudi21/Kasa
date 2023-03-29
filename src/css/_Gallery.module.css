@@ -1,20 +1,50 @@
 .img {
     width: 100%;
     border-radius: 5px;
+    position: relative;
 }
 
 .container {
-    position: relative;
 }
 
 .left {
     position: absolute;
-    bottom: 50%;
+    top: 24%;
+    height: 20px;
+    width: 13px;
+    right: 90%;
 }
-
 
 .right {
     position: absolute;
-    bottom: 50%;
-    left: 96%;
+    top: 24%;
+    left: 90%;
+    height: 20px;
+    width: 13px;
 }
+
+@media screen and (min-width: 1200px) {
+    /* Styles for large screens */
+    .img {
+        height: 415px;
+        border-radius: 25px;
+        position: relative;
+
+    }
+
+    .left {
+        position: absolute;
+        bottom: 50%;
+        height: 79px;
+        width: 47px;
+    }
+
+    .right {
+        position: absolute;
+        bottom: 50%;
+        left: 92%;
+        height: 79px;
+        width: 47px;
+    }
+}
+

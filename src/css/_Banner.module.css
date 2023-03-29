@@ -2,11 +2,11 @@
     width: 335px;
     margin: auto;
     mix-blend-mode: darken;
-    opacity: 0.3;
     border-radius: 10px;
     background: #000000 url("../assets/img-banner.png");
     display: flex;
     align-items: flex-end;
+    border: 2px solid red;
 }
 
 .title   {
@@ -18,5 +18,18 @@
     line-height: 100%;
     width: 217px;
     height: 48px;
-    margin: 31px 102px 32px 16px;
+    margin: 0 100px;
+}
+
+@media screen and (min-width: 1200px) {
+    /* Styles for large screens */
+    .container {
+        height: 223px;
+        width: 80%;
+        border-radius: 25px;
+    }
+
+    .title {
+        font-size: 18px;
+    }
 }

@@ -21,3 +21,10 @@
     line-height: 18px;
     border: 2px solid red;
 }
+
+@media screen and (min-width: 1200px) {
+    /* Styles for large screens */
+    .header {
+        padding: 40px 70px;
+    }
+}

@@ -1,7 +1,7 @@
 import Layout from "../components/Layout";
 import styles from '../css/_About.module.css';
 import Banner from "../components/Banner";
-import Collapse from "../components/Collapse";
+import Collapse from "../components/collapse/Collapse";
 
 export default function About() {
     const collapses = [
@@ -28,11 +28,11 @@ export default function About() {
                     <section>
                         <Banner />
                     </section>
-                    {collapses.map((el) => (
-                        <section>
+                    <section className={styles.faround}>
+                        {collapses.map((el) => (
                             <Collapse title={el.title} text={el.text} />
-                        </section>
-                    ))}
+                        ))}
+                    </section>
                 </div>
             </Layout>
         </>

@@ -1,0 +1,24 @@
+.container {
+
+}
+
+
+@media screen and (min-width: 1200px) {
+    /* Styles for large screens */
+    .container {
+        display: flex;
+        width: 75%;
+        background-color: #F7F7F7;
+        margin: 45px auto;
+        border-radius: 25px;
+        padding: 50px;
+    }
+
+    .grid {
+        --num-cols: 3; /* default number of columns */
+        display: grid;
+        grid-template-columns: repeat(var(--num-cols), 1fr);
+        grid-gap: 10px;
+        margin: auto;
+    }
+}

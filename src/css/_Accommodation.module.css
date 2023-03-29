@@ -15,6 +15,10 @@ margin: 0 20px;
     align-items: center;
 }
 
+.column {
+    flex-direction: column;
+}
+
 .tutu {
     display: flex;
     flex-direction: column;
@@ -27,7 +31,6 @@ margin: 0 20px;
     line-height: 142.6%;
     align-items: flex-end;
     text-align: right;
-
     color: #FF6060;
 }
 
@@ -59,4 +62,40 @@ margin: 0 20px;
     display: flex;
     align-items: center;
     margin: 10px 0;
+}
+
+.star {
+    height: 16px;
+    width: 16px;
+}
+
+@media screen and (min-width: 1200px) {
+    /* Styles for large screens */
+    .container {
+        margin: 0 70px;
+    }
+    .title {
+        font-size: 36px;
+    }
+
+    .location {
+        font-size: 18px;
+    }
+
+    .star {
+        height: 30px;
+        width: 30px;
+    }
+
+    .tags {
+        margin: 10px 0 0 0;
+    }
+
+
+    .fend {
+        display: flex;
+        justify-content: space-between;
+        align-items: end;
+    }
+
 }

@@ -36,3 +36,18 @@
     line-height: 142.6%;
     color: #FF6060;
 }
+
+@media screen and (min-width: 1200px) {
+    /* Styles for large screens */
+    .container {
+        border-radius: 10px;
+    }
+
+    .title {
+        font-size: 24px;
+    }
+
+    .text {
+        font-size: 24px;
+    }
+}
