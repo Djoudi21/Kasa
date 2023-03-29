@@ -10,15 +10,52 @@ import Gallery from "../components/Gallery";
 
 export default function Accommodation() {
     const idFromParams = useParams()
-    const [accommodation, setAccommodation] = useState(  {},)
+    const [accommodation, setAccommodation] = useState(  {})
+    const [stars, setStars] = useState(  [])
     const {accommodations, FetchAccommodations} = useContext(AccommodationsContext)
     useEffect(() => {
         FetchAccommodations()
         const filteredAccommodations = filterAccommodation()
         setAccommodation(filteredAccommodations[0])
     }, [accommodation]);
+
+    useEffect(() => {
+        handleGoodStars()
+    }, [accommodation]);
+
     function filterAccommodation() {
        return accommodations.filter(el => el.id === idFromParams.id)
+    }
+
+    function handleGoodStars() {
+        if(!accommodation) {
+            return
+        }
+        const parsedRatedGoodStars = parseInt(accommodation.rating, 10)
+        const badStarsInt = 5 - parsedRatedGoodStars
+        const goodStars = []
+        const badStars = []
+        for (let i = 0; i < parsedRatedGoodStars; i++) {
+            goodStars.push(
+                <div className={styles.fcenter}>
+                    {/*<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">*/}
+                    {/*    <path d="M9.8225 6.5L8 0.5L6.1775 6.5H0.5L5.135 9.8075L3.3725 15.5L8 11.9825L12.635 15.5L10.8725 9.8075L15.5 6.5H9.8225Z" fill="#E3E3E3"/>*/}
+                    {/*</svg>*/}
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9.8225 6.5L8 0.5L6.1775 6.5H0.5L5.135 9.8075L3.3725 15.5L8 11.9825L12.635 15.5L10.8725 9.8075L15.5 6.5H9.8225Z" fill="#FF6060"/>
+                    </svg>
+                </div>);
+        }
+
+        for (let i = 0; i < badStarsInt; i++) {
+            badStars.push(
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9.8225 6.5L8 0.5L6.1775 6.5H0.5L5.135 9.8075L3.3725 15.5L8 11.9825L12.635 15.5L10.8725 9.8075L15.5 6.5H9.8225Z" fill="#E3E3E3"/>
+                </svg>
+            );
+        }
+        const concatStars = goodStars.concat(badStars)
+        setStars(concatStars)
     }
     return (
         <>
@@ -36,26 +73,9 @@ export default function Accommodation() {
                                     <Tag title={el} />
                                 ))}
                             </div>
-                            //TODO: handle rating function
-                            <div className={styles.rating}>
-                                <div>
-                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M9.8225 6.5L8 0.5L6.1775 6.5H0.5L5.135 9.8075L3.3725 15.5L8 11.9825L12.635 15.5L10.8725 9.8075L15.5 6.5H9.8225Z" fill="#FF6060"/>
-                                    </svg>
-                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M9.8225 6.5L8 0.5L6.1775 6.5H0.5L5.135 9.8075L3.3725 15.5L8 11.9825L12.635 15.5L10.8725 9.8075L15.5 6.5H9.8225Z" fill="#FF6060"/>
-                                    </svg>
-                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M9.8225 6.5L8 0.5L6.1775 6.5H0.5L5.135 9.8075L3.3725 15.5L8 11.9825L12.635 15.5L10.8725 9.8075L15.5 6.5H9.8225Z" fill="#FF6060"/>
-                                    </svg>
-                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M9.8225 6.5L8 0.5L6.1775 6.5H0.5L5.135 9.8075L3.3725 15.5L8 11.9825L12.635 15.5L10.8725 9.8075L15.5 6.5H9.8225Z" fill="#FF6060"/>
-                                    </svg>
-                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M9.8225 6.5L8 0.5L6.1775 6.5H0.5L5.135 9.8075L3.3725 15.5L8 11.9825L12.635 15.5L10.8725 9.8075L15.5 6.5H9.8225Z" fill="#FF6060"/>
-                                    </svg>
-                                </div>
-                                <div className={styles.flex}>
+                            <div className={styles.faround}>
+                                <div className={styles.fcenter}>{stars}</div>
+                                <div className={styles.faround}>
                                     <div className={styles.tutu}>
                                         {/*<span>{accommodation.host.name}</span>*/}
                                     </div>
