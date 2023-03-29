@@ -12,6 +12,7 @@ import ErrorPage from "./pages/error-page";
 import reportWebVitals from './reportWebVitals';
 import About from "./pages/about";
 import Accommodation from "./pages/accommodation";
+import {AccommodationsProvider} from "./utils";
 
 const router = createBrowserRouter([
     {
@@ -33,7 +34,9 @@ const router = createBrowserRouter([
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-      <RouterProvider router={router} />
+      <AccommodationsProvider>
+          <RouterProvider router={router}/>
+      </AccommodationsProvider>
   </React.StrictMode>
 );
 
