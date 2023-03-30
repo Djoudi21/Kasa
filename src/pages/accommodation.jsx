@@ -5,7 +5,7 @@ import Tag from "../components/Tag";
 import {useContext, useEffect, useState} from "react";
 import {AccommodationsContext} from "../utils";
 import { useParams} from "react-router-dom";
-import Gallery from "../components/Gallery";
+import Gallery from "../components/gallery/Gallery";
 
 export default function Accommodation() {
     const idFromParams = useParams()

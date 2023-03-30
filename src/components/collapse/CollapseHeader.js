@@ -1,5 +1,5 @@
 import styles from '../../css/_Collapse.module.css';
-import Chevron from "./Chevron";
+import ChevronUpAndDown from "./ChevronUpAndDown";
 
 export default function CollapseHeader({title, isOpen, onClick, screenSize}) {
     const handleClick = () => {
@@ -9,7 +9,7 @@ export default function CollapseHeader({title, isOpen, onClick, screenSize}) {
     return (
         <div className={styles.toto}>
             <h1 className={styles.title}>{title}</h1>
-            <Chevron onClick={handleClick} isOpen={isOpen} screenSize={screenSize}/>
+            <ChevronUpAndDown onClick={handleClick} isOpen={isOpen} screenSize={screenSize}/>
         </div>
     );
 }

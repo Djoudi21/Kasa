@@ -1,9 +1,7 @@
-import styles from '../../css/_Collapse.module.css';
-import {useEffect, useState} from 'react'
 import ChevronUp from "./ChevronUp";
 import ChevronDown from "./ChevronDown";
 
-export default function Collapse({isOpen, onClick, screenSize}) {
+export default function ChevronUpAndDown({isOpen, onClick, screenSize}) {
 
     const handleClick = () => {
         onClick();
