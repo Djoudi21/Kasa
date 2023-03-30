@@ -3,10 +3,16 @@ import styles from '../css/_Banner.module.css';
 export default function Banner({size}) {
     return (
         <>
-            <div style={{ height: size === "small" ? '1OOpx' : '300px' }} className={styles.container}>
-                <h3 className={styles.title}>Chez vous,
-                    partout et ailleurs</h3>
-            </div>
+            {size === 'small' ? (
+                <div className={`${styles.container} ${styles.small}`}>
+                    <div className={styles.flex}>
+                        <h3 className={styles.title}>Chez vous,</h3>
+                        <h3 className={styles.title}>partout et ailleurs</h3>
+                    </div>
+                </div>
+            ) : (
+                <div className={`${styles.container} ${styles.large}`}/>
+            ) }
         </>
     );
 }

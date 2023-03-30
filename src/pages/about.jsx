@@ -25,9 +25,7 @@ export default function About() {
         <>
             <Layout>
                 <div className={styles.container}>
-                    <section>
-                        <Banner />
-                    </section>
+                    <Banner />
                     <section className={styles.faround}>
                         {collapses.map((el) => (
                             <Collapse title={el.title} text={el.text} />

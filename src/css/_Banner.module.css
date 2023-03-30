@@ -1,12 +1,28 @@
 .container {
-    width: 335px;
-    margin: auto;
+    /*width: 335px;*/
+    /*margin: auto;*/
     mix-blend-mode: darken;
     border-radius: 10px;
     background: #000000 url("../assets/img-banner.png");
     display: flex;
-    align-items: flex-end;
-    border: 2px solid red;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.flex {
+    display: flex;
+    flex-direction: column;
+}
+
+.small {
+    height: 111px;
+    width: 335px;
+    margin: auto;
+}
+
+.large {
+    height: 223px;
+    margin: auto;
 }
 
 .title   {
@@ -15,21 +31,30 @@
     font-weight: 500;
     font-size: 24px;
     color: #FFFFFF;
-    line-height: 100%;
+    /*line-height: 100%;*/
     width: 217px;
-    height: 48px;
-    margin: 0 100px;
+    /*height: 48px;*/
+    /*margin: 0 100px;*/
+    padding-left: 16px;
+    margin: 0;
 }
 
 @media screen and (min-width: 1200px) {
     /* Styles for large screens */
     .container {
-        height: 223px;
-        width: 80%;
+        width: 75%;
+        margin: 45px auto;
         border-radius: 25px;
+        padding: 50px;
+        justify-content: center;
     }
 
     .title {
-        font-size: 18px;
+        font-size: 48px;
+        width: auto;
+    }
+
+    .flex {
+        flex-direction: row;
     }
 }

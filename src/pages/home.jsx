@@ -11,9 +11,7 @@ export default function Home() {
     }, [FetchAccommodations]);
     return (
         <>
-            <section>
-                <Banner size={"small"} />
-            </section>
+            <Banner size={"small"} />
             <section className={styles.container}>
                 <CardList accommodations={accommodations} />
             </section>
