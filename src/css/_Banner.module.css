@@ -1,6 +1,4 @@
 .container {
-    /*width: 335px;*/
-    /*margin: auto;*/
     mix-blend-mode: darken;
     border-radius: 10px;
     background: #000000 url("../assets/img-banner.png");
@@ -31,10 +29,7 @@
     font-weight: 500;
     font-size: 24px;
     color: #FFFFFF;
-    /*line-height: 100%;*/
     width: 217px;
-    /*height: 48px;*/
-    /*margin: 0 100px;*/
     padding-left: 16px;
     margin: 0;
 }
