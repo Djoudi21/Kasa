@@ -8,6 +8,10 @@ margin: 0 20px;
     align-items: center;
 }
 
+.freverse {
+    flex-direction: column-reverse;
+}
+
 
 .fcenter {
     display: flex;
@@ -19,7 +23,7 @@ margin: 0 20px;
     flex-direction: column;
 }
 
-.tutu {
+.name {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -69,6 +73,8 @@ margin: 0 20px;
     width: 16px;
 }
 
+
+
 @media screen and (min-width: 1200px) {
     /* Styles for large screens */
     .container {
@@ -85,17 +91,28 @@ margin: 0 20px;
     .star {
         height: 30px;
         width: 30px;
+        list-style-type: none;
+        margin: 5px 5px 0 5px;
     }
 
     .tags {
         margin: 10px 0 0 0;
     }
 
+    .name {
+        font-size: 18px;
+    }
 
     .fend {
         display: flex;
         justify-content: space-between;
         align-items: end;
+    }
+
+    .img {
+        width: 64px;
+        height: 64px;
+        border-radius: 50%;
     }
 
 }

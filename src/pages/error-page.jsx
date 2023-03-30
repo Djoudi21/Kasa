@@ -1,12 +1,9 @@
-import {Link, useRouteError} from "react-router-dom";
+import {Link} from "react-router-dom";
 import styles from '../css/_ErrorPage.module.css';
 import Layout from "../components/Layout";
 
 
 export default function ErrorPage() {
-    const error = useRouteError();
-    console.error(error);
-
     return (
         <Layout>
             <div className={styles.container}>

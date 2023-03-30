@@ -4,9 +4,8 @@ import Collapse from "../components/collapse/Collapse";
 import Tag from "../components/Tag";
 import {useContext, useEffect, useState} from "react";
 import {AccommodationsContext} from "../utils";
-import {useParams} from "react-router-dom";
+import { useParams} from "react-router-dom";
 import Gallery from "../components/Gallery";
-
 
 export default function Accommodation() {
     const idFromParams = useParams()
@@ -17,9 +16,6 @@ export default function Accommodation() {
         FetchAccommodations()
         const filteredAccommodations = filterAccommodation()
         setAccommodation(filteredAccommodations[0])
-    }, [accommodation]);
-
-    useEffect(() => {
         handleGoodStars()
     }, [accommodation]);
 
@@ -37,11 +33,11 @@ export default function Accommodation() {
         const badStars = []
         for (let i = 0; i < parsedRatedGoodStars; i++) {
             goodStars.push(
-                <div className={styles.fcenter}>
-                    <svg className={styles.star}viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <li className={styles.star}>
+                    <svg  viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M9.8225 6.5L8 0.5L6.1775 6.5H0.5L5.135 9.8075L3.3725 15.5L8 11.9825L12.635 15.5L10.8725 9.8075L15.5 6.5H9.8225Z" fill="#FF6060"/>
                     </svg>
-                </div>);
+                </li>);
         }
 
         for (let i = 0; i < badStarsInt; i++) {
@@ -57,10 +53,12 @@ export default function Accommodation() {
     return (
         <>
             <Layout>
-                {accommodation ? (
-                    <div className={styles.container}>
+                {accommodation &&
+                    (<div className={styles.container}>
                         <section>
-                            <Gallery pictures={accommodation.pictures}  />
+                            {accommodation.pictures &&
+                                <Gallery pictures={accommodation.pictures}  />
+                            }
                         </section>
                         <section className={styles.fend}>
                             <div>
@@ -72,25 +70,22 @@ export default function Accommodation() {
                                     ))}
                                 </div>
                             </div>
-                            <div className={styles.faround}>
-                                <div className={styles.faround}>
-                                    <div className={styles.fcenter}>{stars}</div>
-                                    <div className={styles.tutu}>
-                                        {/*<span>{accommodation.host.name}</span>*/}
+                            <div className={`${styles.faround} ${styles.freverse}`}>
+                                <ul className={styles.fcenter}>{stars}</ul>
+                                {accommodation.host &&
+                                    <div className={styles.faround}>
+                                        <div className={styles.name}>{accommodation.host.name}</div>
+                                        <img className={styles.img} src={accommodation.host.picture} alt=""/>
                                     </div>
-                                    //TODO: handle avatar pic
-                                    <svg width="33" height="33" viewBox="0 0 33 33" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <circle cx="16.5" cy="16.5" r="16" fill="#C4C4C4"/>
-                                    </svg>
-                                </div>
+                                }
                             </div>
                         </section>
                         <section className={styles.faround && styles.column}>
                             <Collapse title={"Description"} text={ accommodation.description} />
                             <Collapse title={"Equipment"} list={ accommodation.equipments} />
                         </section>
-                    </div>
-                ) : (<div>toto</div>) }
+                    </div>)
+                }
             </Layout>
         </>
     );
