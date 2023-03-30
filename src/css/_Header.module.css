@@ -9,6 +9,12 @@
     align-items: end;
 }
 
+.nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .nav ul {
     display: flex;
     justify-content: space-around
@@ -48,5 +54,9 @@ a:active {
 
     a {
         font-size: 24px;
+    }
+
+    .nav {
+        align-items: end;
     }
 }
