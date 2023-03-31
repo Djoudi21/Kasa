@@ -3,12 +3,11 @@
 }
 
 @media screen and (min-width: 1200px) {
-    /* Styles for large screens */
     .container {
         min-height: calc(100vh - 250px);
     }
 
-    .faround {
+    .collapses {
         margin: 0 208px;
     }
 }

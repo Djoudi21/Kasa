@@ -1,17 +1,14 @@
-import Banner from "../components/Banner";
+import HomeBanner from "../components/banners/HomeBanner";
 import CardList from "../components/CardsList";
 import styles from '../css/_Home.module.css';
-import {useContext, useEffect} from "react";
+import {useContext} from "react";
 import {AccommodationsContext} from "../utils";
 
 export default function Home() {
-    const {accommodations, FetchAccommodations} = useContext(AccommodationsContext)
-    useEffect(() => {
-        FetchAccommodations()
-    }, [FetchAccommodations]);
+    const {accommodations} = useContext(AccommodationsContext)
     return (
         <>
-            <Banner size={"small"} />
+            <HomeBanner />
             <section className={styles.container}>
                 <CardList accommodations={accommodations} />
             </section>

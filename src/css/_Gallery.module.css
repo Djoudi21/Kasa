@@ -1,6 +1,8 @@
 .img {
     width: 100%;
     border-radius: 10px;
+    max-height: 255px;
+    height: 255px;
 }
 
 .container {
@@ -25,6 +27,7 @@
     /* Styles for large screens */
     .img {
         height: 415px;
+        max-height: 415px;
         border-radius: 25px;
         position: relative;
     }

@@ -1,5 +1,3 @@
-import styles from '../../css/_Banner.module.css';
-
 export default function ChevronUp({width, height, onClick}) {
     const handleClick = () => {
         onClick();

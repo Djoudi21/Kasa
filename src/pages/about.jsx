@@ -1,6 +1,6 @@
 import Layout from "../components/Layout";
 import styles from '../css/_About.module.css';
-import Banner from "../components/Banner";
+import HomeBanner from "../components/banners/HomeBanner";
 import Collapse from "../components/collapse/Collapse";
 
 export default function About() {
@@ -25,10 +25,10 @@ export default function About() {
         <>
             <Layout>
                 <div className={styles.container}>
-                    <Banner />
-                    <section className={styles.faround}>
+                    <HomeBanner />
+                    <section className={styles.collapses}>
                         {collapses.map((el) => (
-                            <Collapse title={el.title} text={el.text} />
+                            <Collapse key={el.text} title={el.title} text={el.text} />
                         ))}
                     </section>
                 </div>

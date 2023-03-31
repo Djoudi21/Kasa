@@ -8,7 +8,7 @@ export default function CardList({accommodations}) {
         <>
             <ul className={styles.grid}>
                 {accommodations.map((el) => (
-                    <Link to={`/accommodation/${el.id}`}>
+                    <Link to={`/accommodation/${el.id}`} key={el.id}>
                         <Card
                             key={el.id}
                             title={el.title}

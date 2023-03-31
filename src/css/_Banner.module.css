@@ -1,10 +1,17 @@
 .container {
     mix-blend-mode: darken;
     border-radius: 10px;
-    background: #000000 url("../assets/img-banner.png");
     display: flex;
     justify-content: flex-start;
     align-items: center;
+}
+
+.homeBackGroundImg {
+    background: #000000 url("../assets/img-banner.png");
+}
+
+.aboutBackGroundImg {
+    background: #000000 url("../assets/img-banner.png");
 }
 
 .flex {
@@ -51,5 +58,10 @@
 
     .flex {
         flex-direction: row;
+    }
+
+    .img {
+        height: 200px;
+        width: 200px;
     }
 }

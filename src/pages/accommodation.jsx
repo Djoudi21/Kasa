@@ -4,24 +4,26 @@ import Collapse from "../components/collapse/Collapse";
 import Tag from "../components/Tag";
 import {useContext, useEffect, useState} from "react";
 import {AccommodationsContext} from "../utils";
-import { useParams} from "react-router-dom";
+import { useParams, useNavigate} from "react-router-dom";
 import Gallery from "../components/gallery/Gallery";
 
 export default function Accommodation() {
+    const navigate = useNavigate()
     const idFromParams = useParams()
-    const [accommodation, setAccommodation] = useState(  {})
+    const [accommodation, setAccommodation] = useState(  null)
     const [stars, setStars] = useState(  [])
-    const {accommodations, FetchAccommodations} = useContext(AccommodationsContext)
-    useEffect(() => {
-        FetchAccommodations()
-        const filteredAccommodations = filterAccommodation()
-        setAccommodation(filteredAccommodations[0])
-        handleGoodStars()
-    }, [accommodation]);
+    const {accommodations} = useContext(AccommodationsContext)
 
-    function filterAccommodation() {
-       return accommodations.filter(el => el.id === idFromParams.id)
-    }
+    useEffect(() => {
+        if(accommodations) {
+           const filteredAccommodations = accommodations.filter(el => el.id === idFromParams.id)
+            if(!filteredAccommodations.length) {
+                navigate('/error-page')
+            }
+            setAccommodation(filteredAccommodations[0])
+            handleGoodStars()
+        }
+    }, [accommodation, accommodations, idFromParams.id]);
 
     function handleGoodStars() {
         if(!accommodation) {
@@ -50,41 +52,39 @@ export default function Accommodation() {
         const concatStars = goodStars.concat(badStars)
         setStars(concatStars)
     }
+    if(!accommodation) {
+        return null
+    }
     return (
         <>
             <Layout>
-                {accommodation &&
-                    (<div className={styles.container}>
+                    <div className={styles.container}>
                         <section>
-                            {accommodation.pictures &&
-                                <Gallery pictures={accommodation.pictures}  />
-                            }
+                            <Gallery pictures={accommodation.pictures}  />
                         </section>
                         <section className={styles.fend}>
                             <div>
                                 <h3 className={styles.title}>{accommodation.title}</h3>
                                 <span className={styles.location}>{ accommodation.location}</span>
                                 <div className={styles.tags}>
-                                    {accommodation.tags && accommodation.tags.map((el) => (
-                                        <Tag title={el} />
+                                    {accommodation.tags.map((el) => (
+                                        <Tag title={el} key={el} />
                                     ))}
                                 </div>
                             </div>
-                            <div className={`${styles.faround} ${styles.freverse}`}>
-                                <ul className={styles.fcenter}>{stars}</ul>
-                                {accommodation.host &&
-                                    <div className={styles.faround}>
+                            <div className={`${styles.flexAround} ${styles.flexReverse}`}>
+                                <ul className={styles.flexCenter}>{stars}</ul>
+                                    <div className={styles.flexAround}>
                                         <div className={styles.name}>{accommodation.host.name}</div>
                                         <img className={styles.img} src={accommodation.host.picture} alt=""/>
                                     </div>
-                                }
                             </div>
                         </section>
-                        <section className={styles.faround && styles.column}>
+                        <section className={styles.flexAround && styles.column}>
                             <Collapse title={"Description"} text={ accommodation.description} />
                             <Collapse title={"Equipment"} list={ accommodation.equipments} />
                         </section>
-                    </div>)
+                    </div>
                 }
             </Layout>
         </>

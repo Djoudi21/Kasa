@@ -7,7 +7,7 @@ export default function CollapseHeader({title, isOpen, onClick, screenSize}) {
     }
 
     return (
-        <div className={styles.toto}>
+        <div className={styles.headerContainer}>
             <h1 className={styles.title}>{title}</h1>
             <ChevronUpAndDown onClick={handleClick} isOpen={isOpen} screenSize={screenSize}/>
         </div>

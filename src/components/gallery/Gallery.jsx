@@ -39,27 +39,38 @@ export default function Gallery({pictures}) {
             src = pictures[index]
         }
     }
+    if(!pictures) {
+        return null
+    }
     return (
         <>
             {screenSize > 1200 ? (
                     <div className={styles.container}>
-                        <div className={styles.left}>
-                            <ChevronLeft  width={50} height={80} onClick={previous} />
-                        </div>
-                        {pictures &&  <img className={styles.img} src={src} alt=""/>}
-                        <div className={styles.right}>
-                            <ChevronRight width={50} height={80} onClick={next} />
-                        </div>
+                        {pictures.length > 1 &&
+                            <div className={styles.left}>
+                                <ChevronLeft  width={50} height={80} onClick={previous} />
+                            </div>
+                        }
+                        <img className={styles.img} src={src} alt=""/>
+                        {pictures.length > 1 &&
+                            <div className={styles.right}>
+                                <ChevronRight width={50} height={80} onClick={next} />
+                            </div>
+                        }
                     </div>
                 ):(
                     <div className={styles.container}>
-                        <div className={styles.left}>
-                            <ChevronLeft width={12} height={20} onClick={previous} />
-                        </div>
-                        {pictures && <img className={styles.img} src={src} alt=""/>}
-                        <div className={styles.right}>
-                            <ChevronRight width={12} height={20} onClick={next} />
-                        </div>
+                        {pictures.length > 1 &&
+                            <div className={styles.left}>
+                                <ChevronLeft width={12} height={20} onClick={previous} />
+                            </div>
+                        }
+                        <img className={styles.img} src={src} alt=""/>
+                        {pictures.length > 1 &&
+                            <div className={styles.right}>
+                                <ChevronRight width={12} height={20} onClick={next} />
+                            </div>
+                        }
                     </div>
                 )}
         </>

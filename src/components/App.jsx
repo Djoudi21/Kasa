@@ -1,4 +1,3 @@
-import '../css/_App.css';
 import Layout from './Layout'
 import About from "../pages/about";
 import Home from "../pages/home";
