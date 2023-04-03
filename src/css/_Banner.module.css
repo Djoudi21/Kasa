@@ -19,14 +19,15 @@
     flex-direction: column;
 }
 
-.small {
+.cardHeightHome {
     height: 111px;
     width: 335px;
     margin: auto;
 }
 
-.large {
+.cardHeightAbout {
     height: 223px;
+    width: 335px;
     margin: auto;
 }
 
@@ -63,5 +64,13 @@
     .img {
         height: 200px;
         width: 200px;
+    }
+
+    .cardHeightDesktop {
+        height: 223px;
+    }
+
+    .cardHeightDesktop {
+        height: 223px;
     }
 }

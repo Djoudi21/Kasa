@@ -1,6 +1,6 @@
 import styles from '../../css/_Header.module.css';
 
-export default function HeaderLogo() {
+export default function FooterLogo() {
     return (
         <div data-testid="footer-logo" className={styles.logo}>
             <svg width="32" height="37" viewBox="0 0 32 37" fill="none" xmlns="http://www.w3.org/2000/svg">

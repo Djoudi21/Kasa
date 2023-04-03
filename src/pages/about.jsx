@@ -1,7 +1,7 @@
 import Layout from "../components/Layout";
 import styles from '../css/_About.module.css';
-import HomeBanner from "../components/banners/HomeBanner";
 import Collapse from "../components/collapse/Collapse";
+import AboutBanner from "../components/banners/AboutBanner";
 
 export default function About() {
     const collapses = [
@@ -25,7 +25,7 @@ export default function About() {
         <>
             <Layout>
                 <div className={styles.container}>
-                    <HomeBanner />
+                    <AboutBanner />
                     <section className={styles.collapses}>
                         {collapses.map((el) => (
                             <Collapse key={el.text} title={el.title} text={el.text} />

@@ -7,16 +7,13 @@ import {faChevronLeft, faChevronRight} from "@fortawesome/free-solid-svg-icons";
 export default function Gallery({pictures}) {
     let [src, setSrc] = useState('')
     let [index, setIndex] = useState(0)
+
     useEffect(() => {
         if(!pictures) {
             return
         }
         setSrc(pictures[index])
     },[index, src]);
-
-    // function getSize() {
-    //     s
-    // }
 
     function next() {
         if(index === pictures.length - 1) {
@@ -35,6 +32,7 @@ export default function Gallery({pictures}) {
             src = pictures[index]
         }
     }
+
     if(!pictures) {
         return null
     }
