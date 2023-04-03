@@ -80,10 +80,14 @@ export default function Accommodation() {
                                     </div>
                             </div>
                         </section>
-                        <section className={styles.flexAround}>
-                            <Collapse title={"Description"} text={ accommodation.description} />
-                            <Collapse title={"Equipment"} list={ accommodation.equipments} />
-                        </section>
+                        <div className={styles.flexAround}>
+                            <div className={styles.width40}>
+                                <Collapse title={"Description"} text={ accommodation.description} />
+                            </div>
+                            <div className={styles.width40}>
+                                <Collapse title={"Equipment"} list={ accommodation.equipments} />
+                            </div>
+                        </div>
                     </div>
                 }
             </Layout>

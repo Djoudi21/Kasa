@@ -1,15 +1,12 @@
 import styles from '../../css/_Gallery.module.css';
 import {useEffect, useState} from "react";
-import ChevronLeft from "./ChevronLeft";
-import ChevronRight from "./ChevronRight";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faChevronRight} from "@fortawesome/free-solid-svg-icons";
+import {faChevronLeft, faChevronRight} from "@fortawesome/free-solid-svg-icons";
 
 
 export default function Gallery({pictures}) {
     let [src, setSrc] = useState('')
     let [index, setIndex] = useState(0)
-    let [screenSize, setScreenSize] = useState(window.innerWidth)
     useEffect(() => {
         if(!pictures) {
             return
@@ -17,13 +14,9 @@ export default function Gallery({pictures}) {
         setSrc(pictures[index])
     },[index, src]);
 
-    useEffect(() => {
-        function handleResize() {
-            setScreenSize(window.innerWidth);
-        }
-        window.addEventListener('resize', handleResize);
-        return () => window.removeEventListener('resize', handleResize);
-    },[screenSize]);
+    // function getSize() {
+    //     s
+    // }
 
     function next() {
         if(index === pictures.length - 1) {
@@ -47,37 +40,19 @@ export default function Gallery({pictures}) {
     }
     return (
         <>
-            {screenSize > 1200 ? (
-                    <div className={styles.container}>
-                        {pictures.length > 1 &&
-                            <div className={styles.left}>
-                                <ChevronLeft  width={50} height={80} onClick={previous} />
-                                {/*<FontAwesomeIcon icon={faChevronRight} className={styles.chevron} onClick={handleClick} />*/}
-
-                            </div>
-                        }
-                        <img className={styles.img} src={src} alt=""/>
-                        {pictures.length > 1 &&
-                            <div className={styles.right}>
-                                <ChevronRight width={50} height={80} onClick={next} />
-                            </div>
-                        }
+            <div className={styles.container}>
+                {pictures.length > 1 &&
+                    <div className={styles.left}>
+                        <FontAwesomeIcon className={`${styles.chevron} ${styles.size}`} icon={faChevronLeft} onClick={previous} />                                {/*<FontAwesomeIcon icon={faChevronRight} className={styles.chevron} onClick={handleClick} />*/}
                     </div>
-                ):(
-                    <div className={styles.container}>
-                        {pictures.length > 1 &&
-                            <div className={styles.left}>
-                                <ChevronLeft width={12} height={20} onClick={previous} />
-                            </div>
-                        }
-                        <img className={styles.img} src={src} alt=""/>
-                        {pictures.length > 1 &&
-                            <div className={styles.right}>
-                                <ChevronRight width={12} height={20} onClick={next} />
-                            </div>
-                        }
+                }
+                <img className={styles.img} src={src} alt=""/>
+                {pictures.length > 1 &&
+                    <div className={styles.right}>
+                        <FontAwesomeIcon className={`${styles.chevron} ${styles.size}`} icon={faChevronRight} onClick={next} />
                     </div>
-                )}
+                }
+            </div>
         </>
     );
 }

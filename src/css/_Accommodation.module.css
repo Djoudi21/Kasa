@@ -124,4 +124,8 @@
         justify-content: space-between;
         align-items: center;
     }
+
+    .width40{
+        width: 45%;
+    }
 }

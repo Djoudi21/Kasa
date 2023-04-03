@@ -5,8 +5,20 @@
     height: 255px;
 }
 
+.size {
+    height: 20px;
+    width: 12px;
+}
+
 .container {
     position: relative;
+}
+
+.chevron {
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .left {
@@ -35,11 +47,17 @@
     .left {
         left: 10px;
         top: 150px;
+
     }
 
     .right {
         top: 150px;
         right: 10px;
+    }
+
+    .size {
+        height: 80px;
+        width: 50px;
     }
 }
 
