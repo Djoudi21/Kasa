@@ -2,11 +2,12 @@
     background: #FF6060;
     border-radius: 5px;
     height: 18px;
-    width: 84px;
+    width: auto;
     margin-right: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 0 10px;
 }
 
 .title {
@@ -24,7 +25,7 @@
     /* Styles for large screens */
     .container {
         height: 25px;
-        width: 115px;
+        padding: 0 20px;
     }
 
     .title {
