@@ -72,15 +72,15 @@ export default function Accommodation() {
                                     ))}
                                 </div>
                             </div>
-                            <div className={`${styles.flexAround} ${styles.flexReverse}`}>
+                            <div className={`${styles.fAround} ${styles.flexReverse}`}>
                                 <ul className={styles.flexCenter}>{stars}</ul>
-                                    <div className={styles.flexAround}>
+                                    <div className={styles.fAround}>
                                         <div className={styles.name}>{accommodation.host.name}</div>
                                         <img className={styles.img} src={accommodation.host.picture} alt=""/>
                                     </div>
                             </div>
                         </section>
-                        <section className={styles.flexAround && styles.column}>
+                        <section className={styles.flexAround}>
                             <Collapse title={"Description"} text={ accommodation.description} />
                             <Collapse title={"Equipment"} list={ accommodation.equipments} />
                         </section>

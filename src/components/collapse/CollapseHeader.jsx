@@ -1,7 +1,7 @@
 import styles from '../../css/_Collapse.module.css';
 import ChevronUpAndDown from "./ChevronUpAndDown";
 
-export default function CollapseHeader({title, isOpen, onClick, screenSize}) {
+export default function CollapseHeader({title, isOpen, onClick}) {
     const handleClick = () => {
         onClick();
     }
@@ -9,7 +9,7 @@ export default function CollapseHeader({title, isOpen, onClick, screenSize}) {
     return (
         <div className={styles.headerContainer}>
             <h1 className={styles.title}>{title}</h1>
-            <ChevronUpAndDown onClick={handleClick} isOpen={isOpen} screenSize={screenSize}/>
+            <ChevronUpAndDown onClick={handleClick} isOpen={isOpen}/>
         </div>
     );
 }

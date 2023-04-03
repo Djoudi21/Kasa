@@ -1,8 +1,8 @@
 .container {
-margin: 0 20px;
+    margin: 0 20px;
 }
 
-.flexAround {
+.fAround {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -117,5 +117,11 @@ margin: 0 20px;
 
     .flexReverse {
         flex-direction: column-reverse;
+    }
+
+    .flexAround {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
     }
 }

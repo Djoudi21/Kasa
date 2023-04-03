@@ -37,10 +37,23 @@
     color: #FF6060;
 }
 
+.chevron {
+    color: white;
+    width: 16px;
+    height: 10px;
+}
+
+.flexCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 @media screen and (min-width: 1200px) {
     /* Styles for large screens */
     .container {
         border-radius: 10px;
+        width: 48%;
     }
 
     .title {
@@ -49,5 +62,10 @@
 
     .text {
         font-size: 24px;
+    }
+
+    .chevron {
+        width: 24px;
+        height: 14px;
     }
 }

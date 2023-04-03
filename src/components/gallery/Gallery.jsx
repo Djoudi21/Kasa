@@ -2,6 +2,9 @@ import styles from '../../css/_Gallery.module.css';
 import {useEffect, useState} from "react";
 import ChevronLeft from "./ChevronLeft";
 import ChevronRight from "./ChevronRight";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faChevronRight} from "@fortawesome/free-solid-svg-icons";
+
 
 export default function Gallery({pictures}) {
     let [src, setSrc] = useState('')
@@ -49,6 +52,8 @@ export default function Gallery({pictures}) {
                         {pictures.length > 1 &&
                             <div className={styles.left}>
                                 <ChevronLeft  width={50} height={80} onClick={previous} />
+                                {/*<FontAwesomeIcon icon={faChevronRight} className={styles.chevron} onClick={handleClick} />*/}
+
                             </div>
                         }
                         <img className={styles.img} src={src} alt=""/>
