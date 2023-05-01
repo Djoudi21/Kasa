@@ -7,11 +7,21 @@
 }
 
 .homeBackGroundImg {
-    background: #000000 url("../assets/img-banner.png");
+    background: url("../assets/img-banner.png");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
-.aboutBackGroundImg {
-    background: #000000 url("../assets/img-banner.png");
+/*.aboutBackGroundImg {*/
+/*    background: url("../assets/toto.png");*/
+/*    background-repeat: no-repeat;*/
+/*    background-size: contain;*/
+/*}*/
+
+.toto {
+    width: 100%;
+    height: 100%;
+    border: 2px solid red;
 }
 
 .flex {
