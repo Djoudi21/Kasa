@@ -1,7 +1,7 @@
 import {createContext, useEffect, useState} from "react";
 import data from '../data.json';
 
-export const AccommodationsContext = createContext()
+export const AccommodationsContext = createContext(undefined)
 
 export const AccommodationsProvider = ({ children }) => {
     const [accommodations, setAccommodations] = useState([])
