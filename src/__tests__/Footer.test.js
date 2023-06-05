@@ -2,24 +2,20 @@ import { render, screen } from '@testing-library/react';
 import Footer from '../components/footer/Footer';
 import FooterLogo from '../components/footer/FooterLogo';
 import Copyright from '../components/footer/Copyright';
-import {AccommodationsProvider} from "../utils";
+import React from 'react'; // Add the correct import statement
 
 describe('Footer', () => {
     it('Should render without crashing', () => {
         render(
-            <AccommodationsProvider>
-                <Footer />
-            </AccommodationsProvider>
+            <Footer />
         );
     })
 
     it('Should display a copyright', () => {
         render(
-            <AccommodationsProvider>
-                <Footer>
-                    <Copyright />
-                </Footer>
-            </AccommodationsProvider>
+            <Footer>
+                <Copyright />
+            </Footer>
         );
         const element = screen.getByTestId('copyright')
         expect(element).toBeTruthy()
@@ -27,11 +23,9 @@ describe('Footer', () => {
 
     it('Should display a logo', () => {
         render(
-            <AccommodationsProvider>
-                <Footer>
-                    <FooterLogo />
-                </Footer>
-            </AccommodationsProvider>
+            <Footer>
+                <FooterLogo />
+            </Footer>
         );
         const element = screen.getByTestId('footer-logo')
         expect(element).toBeTruthy()

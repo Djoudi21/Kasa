@@ -37,20 +37,19 @@ export default function Gallery({pictures}) {
         return null
     }
     return (
-        <>
-            <div className={styles.container}>
-                {pictures.length > 1 &&
-                    <div className={styles.left}>
-                        <FontAwesomeIcon className={`${styles.chevron} ${styles.size}`} icon={faChevronLeft} onClick={previous} />                                {/*<FontAwesomeIcon icon={faChevronRight} className={styles.chevron} onClick={handleClick} />*/}
-                    </div>
-                }
-                <img className={styles.img} src={src} alt=""/>
-                {pictures.length > 1 &&
-                    <div className={styles.right}>
-                        <FontAwesomeIcon className={`${styles.chevron} ${styles.size}`} icon={faChevronRight} onClick={next} />
-                    </div>
-                }
-            </div>
-        </>
+        <div className={styles.container}>
+            {pictures.length > 1 &&
+                <div className={styles.left}>
+                    <FontAwesomeIcon className={`${styles.chevron} ${styles.size}`} icon={faChevronLeft} onClick={previous} />
+                </div>
+            }
+            <span className={styles.pagination}>{index + 1}/{pictures.length}</span>
+            <img className={styles.img} src={src} alt=""/>
+            {pictures.length > 1 &&
+                <div className={styles.right}>
+                    <FontAwesomeIcon className={`${styles.chevron} ${styles.size}`} icon={faChevronRight} onClick={next} />
+                </div>
+            }
+        </div>
     );
 }

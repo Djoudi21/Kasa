@@ -35,6 +35,10 @@
     right: 10px;
 }
 
+.pagination {
+  display: none;
+}
+
 @media screen and (min-width: 1200px) {
     /* Styles for large screens */
     .img {
@@ -58,6 +62,20 @@
     .size {
         height: 80px;
         width: 50px;
+    }
+
+    .pagination {
+        display: block;
+        position: absolute;
+        top: 90%;
+        left: 50%;
+        z-index: 1;
+        color: #FFFFFF;
+        font-family: 'Montserrat', sans-serif;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 142.6%;
     }
 }
 

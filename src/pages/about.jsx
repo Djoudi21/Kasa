@@ -27,7 +27,7 @@ export default function About() {
                 <div className={styles.container}>
                     <AboutBanner />
                     <section className={styles.collapses}>
-                        {collapses.map((el) => (
+                        {collapses.map((el, index) => (
                             <Collapse key={el.text} title={el.title} text={el.text} />
                         ))}
                     </section>

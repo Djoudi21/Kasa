@@ -1,5 +1,4 @@
 @media screen and (min-width: 1200px) {
-    /* Styles for large screens */
     .container {
         display: flex;
         width: 75%;
@@ -10,10 +9,14 @@
     }
 
     .grid {
-        --num-cols: 3; /* default number of columns */
+        --num-cols: 3;
         display: grid;
         grid-template-columns: repeat(var(--num-cols), 1fr);
         grid-gap: 10px;
         margin: auto;
+    }
+
+    a {
+        text-align: left;
     }
 }
